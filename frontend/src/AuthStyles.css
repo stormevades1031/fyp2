@@ -1,0 +1,1286 @@
+/* Main color variables - matching the homepage theme */
+:root {
+  --primary-black: #121212;
+  --primary-yellow: #FFD700;
+  --primary-red: #FF3B30;
+  --text-light: #FFFFFF;
+  --text-dark: #121212;
+  --accent-gray: #333333;
+  
+  /* Use the main theme colors from index.css */
+  --primary-dark: #1A1E2E;
+  --primary-accent: #4F46E5;
+  --secondary-accent: #06B6D4;
+  --surface-dark: #252A3C;
+  --text-muted: #94A3B8;
+  --border-color: #374151;
+}
+
+/* Global body padding for auth pages */
+body.auth-page {
+  padding-top: 6rem; /* Ensure all auth pages have top padding */
+}
+
+/* Auth container */
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 6rem); /* Adjust for body padding */
+  margin-top: 9rem;
+  padding: 2.5rem;
+  background-color: var(--primary-dark);
+}
+
+/* Reset password specific container - removes margin-top */
+.auth-container.reset-password {
+  margin: -5rem 0 -4rem 0;
+}
+
+/* Auth card */
+.auth-card {
+  background-color: var(--surface-dark);
+  border-radius: 16px;
+  padding: 3rem;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.auth-card::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 4px;
+  background: linear-gradient(to bottom, var(--primary-accent), var(--secondary-accent));
+}
+
+.auth-card h2 {
+  color: var(--text-light);
+  margin-top: 0;
+  margin-bottom: 2rem;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+/* Form styling */
+.form-group {
+  margin-bottom: 1.75rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.75rem;
+  color: var(--text-light);
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.875rem;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.05);
+  color: var(--text-light);
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+/* Updated auth-btn styling to match website theme */
+.auth-btn {
+  width: 100%;
+  padding: 0.875rem;
+  background: linear-gradient(90deg, var(--primary-accent), var(--secondary-accent));
+  color: var(--text-light);
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1.5rem;
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+}
+
+.auth-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(79, 70, 229, 0.4);
+  background: linear-gradient(90deg, #4338ca, #0891b2);
+}
+
+.auth-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+}
+
+/* Add missing auth-button base styling */
+.auth-button {
+  width: 100%;
+  padding: 0.875rem;
+  background: linear-gradient(90deg, var(--primary-accent), var(--secondary-accent));
+  color: var(--text-light);
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1.5rem;
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+}
+
+.auth-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(79, 70, 229, 0.4);
+  background: linear-gradient(90deg, #4338ca, #0891b2);
+}
+
+.auth-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+}
+
+/* Auth button variants */
+.auth-button.primary {
+  width: 60%; /* Match other buttons */
+  padding: 1rem 0.875rem;
+  background: linear-gradient(90deg, var(--primary-accent), var(--secondary-accent));
+  border: none;
+  color: var(--text-light);
+  font-size: 1.1rem; /* Increased font size to match */
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 2rem auto 0 auto; /* Center the button */
+  display: block; /* Required for margin auto centering */
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+}
+
+.auth-button.primary:hover {
+  background: linear-gradient(90deg, #4338ca, #0891b2);
+  color: var(--text-light);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(79, 70, 229, 0.4);
+}
+
+/* Modified auth-button secondary for change password button */
+.auth-button.secondary {
+  width: 60%; /* Further reduced width */
+  padding: 1rem 0.875rem;
+  background: linear-gradient(90deg, var(--primary-accent), var(--secondary-accent));
+  border: none;
+  color: var(--text-light);
+  font-size: 1.1rem; /* Increased font size */
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 1.5rem auto 0 auto; /* Center the button */
+  display: block; /* Required for margin auto centering */
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+}
+
+.auth-button.secondary:hover {
+  background: linear-gradient(90deg, #4338ca, #0891b2);
+  color: var(--text-light);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(79, 70, 229, 0.4);
+}
+
+/* Logout button styling with bright red background */
+.auth-button.logout-btn {
+  width: 60%; /* Further reduced width */
+  padding: 1rem 0.875rem;
+  background: #FF3B30;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem; /* Increased font size */
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 1.5rem auto 0rem auto; /* Center the button */
+  display: flex; /* Keep flex for icon alignment */
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  box-shadow: 0 4px 12px rgba(255, 59, 48, 0.3);
+}
+
+.auth-button.logout-btn:hover {
+  background: #E6342A;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(255, 59, 48, 0.4);
+}
+
+.auth-button.logout-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 12px rgba(255, 59, 48, 0.3);
+}
+
+/* Center the logout section container */
+.logout-section {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+/* Updated auth links styling to match theme */
+.auth-links {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.auth-links p {
+  color: var(--text-muted);
+  margin: 0.75rem 0;
+  font-size: 0.95rem;
+}
+
+.auth-links a {
+  color: var(--primary-accent);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.auth-links a:hover {
+  color: var(--secondary-accent);
+  text-decoration: none;
+}
+
+.auth-links a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background: linear-gradient(90deg, var(--primary-accent), var(--secondary-accent));
+  transition: width 0.3s ease;
+}
+
+.auth-links a:hover::after {
+  width: 100%;
+}
+
+/* Auth link button styling to match auth-links */
+.auth-link-button {
+  color: var(--primary-accent);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  position: relative;
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-size: 0.95rem;
+  padding: 0;
+  margin: 0.75rem 0;
+  display: inline-block;
+}
+
+.auth-link-button:hover {
+  color: var(--secondary-accent);
+  text-decoration: none;
+}
+
+.auth-link-button::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background: linear-gradient(90deg, var(--primary-accent), var(--secondary-accent));
+  transition: width 0.3s ease;
+}
+
+.auth-link-button:hover::after {
+  width: 100%;
+}
+
+  .auth-links a:hover {
+    color: var(--secondary-accent);
+    text-decoration: none;
+  }
+
+  .auth-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background: linear-gradient(90deg, var(--primary-accent), var(--secondary-accent));
+    transition: width 0.3s ease;
+  }
+
+  .auth-links a:hover::after {
+    width: 100%;
+  }
+
+  /* Ensure form inputs match the theme */
+  .form-group input:focus {
+    outline: none;
+    border-color: var(--primary-accent);
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
+  }
+
+  /* Redirect text */
+  .auth-redirect {
+    margin-top: 2rem;
+    text-align: center;
+    color: var(--text-muted);
+  }
+
+  .auth-redirect a {
+    color: var(--primary-accent);
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+  }
+
+  .auth-redirect a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: -2px;
+    left: 0;
+    background-color: var(--primary-accent);
+    transition: width 0.3s ease;
+  }
+
+  .auth-redirect a:hover::after {
+    width: 100%;
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .auth-card {
+      padding: 2rem;
+    }
+  }
+
+  /* Error message styling with increased bottom margin */
+  .error-message {
+    background-color: rgba(255, 59, 48, 0.1);
+    border: 1px solid var(--primary-red);
+    color: var(--primary-red);
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 2rem; /* Increased from 1.5rem to 2rem for more spacing */
+    font-size: 0.9rem;
+  }
+
+  .error-message ul {
+    margin: 0;
+    padding-left: 1.2rem;
+  }
+
+  .error-message li {
+    margin-bottom: 0.5rem;
+  }
+
+  /* Password hint styling */
+  .password-hint {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+    display: block;
+  }
+
+  /* Password input container */
+  .password-input-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  .password-input-container input {
+    width: 100%;
+    padding-right: 45px; /* Make room for the toggle button */
+  }
+
+  /* Password toggle button */
+  .password-toggle-btn {
+    position: absolute;
+    right: 12px;
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    padding: 8px;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+    z-index: 1;
+  }
+
+  .password-toggle-btn:hover {
+    color: var(--text-light);
+  }
+
+  .password-toggle-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  /* Add styling for password-toggle class used in AccountSettings */
+  .password-toggle {
+    position: absolute;
+    right: 12px;
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    padding: 8px;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+    z-index: 1;
+  }
+
+  .password-toggle:hover {
+    color: var(--text-light);
+  }
+
+  .password-toggle:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  /* Password requirements */
+  .password-requirements {
+    margin-top: 1rem;
+    padding: 1rem;
+    background-color: rgba(255, 215, 0, 0.1);
+    border: 1px solid var(--primary-yellow);
+    border-radius: 8px;
+    font-size: 0.9rem;
+  }
+
+  .requirements-title {
+    color: var(--primary-yellow);
+    margin: 0 0 0.75rem 0;
+    font-weight: 600;
+  }
+
+  .requirements-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .requirements-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    transition: color 0.3s ease;
+  }
+
+  .requirements-list li:last-child {
+    margin-bottom: 0;
+  }
+
+  .requirements-list li i {
+    margin-right: 0.5rem;
+    width: 16px;
+    text-align: center;
+  }
+
+  .requirements-list li.valid {
+    color: #4CAF50;
+  }
+
+  .requirements-list li.invalid {
+    color: var(--primary-red);
+  }
+
+  .requirements-list li.valid i {
+    color: #4CAF50;
+  }
+
+  .requirements-list li.invalid i {
+    color: var(--primary-red);
+  }
+
+  /* Error message styling (if not already present) */
+  .success-message {
+    background-color: #d4edda;
+    color: #155724;
+    padding: 12px;
+    border-radius: 4px;
+    margin: 15px 0;
+    border: 1px solid #c3e6cb;
+    text-align: center;
+    font-weight: 500;
+  }
+
+  .link-button {
+    background: none;
+    border: none;
+    color: var(--primary-color);
+    cursor: pointer;
+    text-decoration: underline;
+    font-size: 14px;
+    padding: 5px;
+    transition: color 0.3s ease;
+  }
+
+  .link-button:hover {
+    color: var(--primary-dark);
+  }
+
+  /* OTP input styling */
+  input[type="text"][maxlength="6"] {
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    text-align: center;
+    font-size: 18px;
+    letter-spacing: 2px;
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .account-settings-content {
+      max-width: 100%;
+      margin: 0 1rem;
+      padding: 2rem 1.5rem;
+    }
+    
+    .form-actions {
+      flex-direction: column;
+    }
+    
+    .form-actions .auth-button {
+      width: 100%;
+    }
+  }
+
+  /* Old password message styling */
+  .old-password-message {
+    background-color: #fff3cd;
+    color: #856404;
+    padding: 15px;
+    border-radius: 6px;
+    margin: 15px 0;
+    border: 1px solid #ffeaa7;
+    text-align: center;
+  }
+
+  .old-password-message p {
+    margin: 0 0 10px 0;
+    font-weight: 500;
+  }
+
+  .reset-password-link {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 4px;
+    background-color: rgba(0, 123, 255, 0.1);
+    transition: all 0.3s ease;
+    display: inline-block;
+  }
+
+  .reset-password-link:hover {
+    background-color: rgba(0, 123, 255, 0.2);
+    text-decoration: none;
+    transform: translateY(-1px);
+  }
+
+  /* Reset Password header with white color */
+  .reset-password-header {
+    color: white;
+    text-align: center;
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+
+  /* Ensure consistent button styling for Back to Login */
+  .link-button {
+    background: linear-gradient(to bottom, var(--primary-accent), var(--secondary-accent)) !important;
+    color: white !important;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 1rem;
+  }
+
+  .link-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    background: linear-gradient(to bottom, #3730A3, #0891B2) !important; /* Darker shades for hover */
+    text-decoration: none;
+    color: white !important;
+  }
+
+  .link-button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+
+  /* Additional spacing for error messages in forms */
+  .form-group + .error-message {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  /* Ensure proper spacing between error message and buttons */
+  .error-message + .auth-button,
+  .error-message + button {
+    margin-top: 1rem;
+  }
+
+/* Account Settings specific styling */
+.user-info-section {
+  max-width: 600px;
+  margin: 0 auto 2rem auto;
+  padding: 0 1rem;
+}
+
+.user-info-section h3 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: var(--text-light);
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+/* Password/Security section styling */
+.password-section {
+  max-width: 600px;
+  margin: 0 auto 2rem auto;
+  padding: 0 1rem;
+}
+
+.password-section h3 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: var(--text-light);
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.info-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  border-left: 4px solid var(--primary-accent);
+}
+
+.info-item label {
+  font-weight: 600;
+  color: var(--text-light);
+  margin-bottom: 0;
+}
+
+.info-item span {
+  color: var(--text-muted);
+  font-weight: 400;
+}
+
+/* Responsive adjustments for account settings */
+@media (max-width: 768px) {
+  .user-info-section,
+  .password-section {
+    max-width: 100%;
+    padding: 0;
+  }
+  
+  .info-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+}
+
+/* Password match tick indicator styling */
+.password-match-indicator {
+  position: absolute;
+  right: 50px; /* Position before the show/hide password button */
+  top: 50%;
+  transform: translateY(-50%);
+  color: #4CAF50;
+  font-size: 1.1rem;
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.password-match-indicator.show {
+  opacity: 1;
+}
+
+.password-match-indicator.error {
+  color: var(--primary-red);
+}
+
+/* Adjust password input padding when tick is present */
+.password-input-container.has-indicator input {
+  padding-right: 80px; /* More space for both tick and show/hide button */
+}
+
+/* Two-Factor Authentication Styles */
+.two-factor-setup {
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-top: 1rem;
+  border-left: 4px solid var(--primary-accent);
+}
+
+.two-factor-setup h4 {
+  color: var(--text-light);
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.qr-code-container {
+  text-align: center;
+  margin: 1.5rem 0;
+  padding: 1rem;
+  background-color: white;
+  border-radius: 8px;
+  display: inline-block;
+}
+
+.qr-code {
+  max-width: 200px;
+  height: auto;
+}
+
+.backup-codes {
+  background-color: rgba(255, 99, 132, 0.1);
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-top: 1rem;
+  border-left: 4px solid #ff6384;
+}
+
+.backup-codes h4 {
+  color: var(--text-light);
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.backup-codes-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+
+.backup-code {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 0.5rem;
+  border-radius: 4px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9rem;
+  text-align: center;
+  color: var(--text-light);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.text-success {
+  color: #10b981 !important;
+}
+
+.text-warning {
+  color: #f59e0b !important;
+}
+
+.form-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.form-actions .auth-button {
+  flex: 1;
+  margin-top: 0;
+}
+
+@media (max-width: 768px) {
+  .backup-codes-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .form-actions {
+    flex-direction: column;
+  }
+  
+  .form-actions .auth-button {
+    width: 100%;
+  }
+}
+
+/* Two-Factor Verification Styles for Login */
+.two-factor-verification {
+  text-align: center;
+}
+
+.two-factor-verification h3 {
+  color: var(--text-light);
+  margin-bottom: 2rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.verification-methods {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.verification-methods button {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.05);
+  color: var(--text-light);
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 120px;
+}
+
+.verification-methods button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: var(--primary-accent);
+}
+
+.verification-methods button.active {
+  background: linear-gradient(90deg, var(--primary-accent), var(--secondary-accent));
+  border-color: var(--primary-accent);
+  color: var(--text-light);
+}
+
+.send-otp-btn {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  color: var(--text-light);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.send-otp-btn:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-color: var(--secondary-accent);
+}
+
+.verify-btn {
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 10px 5px;
+  min-width: 120px;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.verify-btn:hover {
+  background: linear-gradient(135deg, #0056b3, #004085);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+}
+
+.verify-btn:disabled {
+  background: #6c757d;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.back-btn {
+  width: 100%;
+  padding: 0.75rem;
+  margin-top: 1rem;
+  background-color: transparent;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: var(--text-light);
+  border-color: var(--text-muted);
+}
+
+@media (max-width: 768px) {
+  .verification-methods {
+    flex-direction: column;
+  }
+  
+  .verification-methods button {
+    min-width: auto;
+  }
+}
+
+/* Ensure form inputs match the theme */
+.form-group input:focus {
+  outline: none;
+  border-color: var(--primary-accent);
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
+}
+
+/* Redirect text */
+.auth-redirect {
+  margin-top: 2rem;
+  text-align: center;
+  color: var(--text-muted);
+}
+
+.auth-redirect a {
+  color: var(--primary-accent);
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+}
+
+.auth-redirect a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 1px;
+  bottom: -2px;
+  left: 0;
+  background-color: var(--primary-accent);
+  transition: width 0.3s ease;
+}
+
+.auth-redirect a:hover::after {
+  width: 100%;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .auth-card {
+    padding: 2rem;
+  }
+}
+
+/* Error message styling with increased bottom margin */
+.error-message {
+  background-color: rgba(255, 59, 48, 0.1);
+  border: 1px solid var(--primary-red);
+  color: var(--primary-red);
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 2rem; /* Increased from 1.5rem to 2rem for more spacing */
+  font-size: 0.9rem;
+}
+
+.error-message ul {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.error-message li {
+  margin-bottom: 0.5rem;
+}
+
+/* Password hint styling */
+.password-hint {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+  display: block;
+}
+
+/* Password input container */
+.password-input-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.password-input-container input {
+  width: 100%;
+  padding-right: 45px; /* Make room for the toggle button */
+}
+
+/* Password toggle button */
+.password-toggle-btn {
+  position: absolute;
+  right: 12px;
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 8px;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+  z-index: 1;
+}
+
+.password-toggle-btn:hover {
+  color: var(--text-light);
+}
+
+.password-toggle-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Add styling for password-toggle class used in AccountSettings */
+.password-toggle {
+  position: absolute;
+  right: 12px;
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 8px;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+  z-index: 1;
+}
+
+.password-toggle:hover {
+  color: var(--text-light);
+}
+
+.password-toggle:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Password requirements */
+.password-requirements {
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: rgba(255, 215, 0, 0.1);
+  border: 1px solid var(--primary-yellow);
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
+.requirements-title {
+  color: var(--primary-yellow);
+  margin: 0 0 0.75rem 0;
+  font-weight: 600;
+}
+
+.requirements-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.requirements-list li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.requirements-list li:last-child {
+  margin-bottom: 0;
+}
+
+.requirements-list li i {
+  margin-right: 0.5rem;
+  width: 16px;
+  text-align: center;
+}
+
+.requirements-list li.valid {
+  color: #4CAF50;
+}
+
+.requirements-list li.invalid {
+  color: var(--primary-red);
+}
+
+.requirements-list li.valid i {
+  color: #4CAF50;
+}
+
+.requirements-list li.invalid i {
+  color: var(--primary-red);
+}
+
+/* Error message styling (if not already present) */
+.success-message {
+  background-color: #d4edda;
+  color: #155724;
+  padding: 12px;
+  border-radius: 4px;
+  margin: 15px 0;
+  border: 1px solid #c3e6cb;
+  text-align: center;
+  font-weight: 500;
+}
+
+.link-button {
+  background: none;
+  border: none;
+  color: var(--primary-color);
+  cursor: pointer;
+  text-decoration: underline;
+  font-size: 14px;
+  padding: 5px;
+  transition: color 0.3s ease;
+}
+
+.link-button:hover {
+  color: var(--primary-dark);
+}
+
+/* OTP input styling */
+input[type="text"][maxlength="6"] {
+  font-family: 'Courier New', monospace;
+  font-weight: bold;
+  text-align: center;
+  font-size: 18px;
+  letter-spacing: 2px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .account-settings-content {
+    max-width: 100%;
+    margin: 0 1rem;
+    padding: 2rem 1.5rem;
+  }
+  
+  .form-actions {
+    flex-direction: column;
+  }
+  
+  .form-actions .auth-button {
+    width: 100%;
+  }
+}
+
+/* Old password message styling */
+.old-password-message {
+  background-color: #fff3cd;
+  color: #856404;
+  padding: 15px;
+  border-radius: 6px;
+  margin: 15px 0;
+  border: 1px solid #ffeaa7;
+  text-align: center;
+}
+
+.old-password-message p {
+  margin: 0 0 10px 0;
+  font-weight: 500;
+}
+
+.reset-password-link {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 4px;
+  background-color: rgba(0, 123, 255, 0.1);
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.reset-password-link:hover {
+  background-color: rgba(0, 123, 255, 0.2);
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+
+/* Reset Password header with white color */
+.reset-password-header {
+  color: white;
+  text-align: center;
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 25px;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Ensure consistent button styling for Back to Login */
+.link-button {
+  background: linear-gradient(to bottom, var(--primary-accent), var(--secondary-accent)) !important;
+  color: white !important;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 1rem;
+}
+
+.link-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  background: linear-gradient(to bottom, #3730A3, #0891B2) !important; /* Darker shades for hover */
+  text-decoration: none;
+  color: white !important;
+}
+
+.link-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Additional spacing for error messages in forms */
+.form-group + .error-message {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+/* Ensure proper spacing between error message and buttons */
+.error-message + .auth-button,
+.error-message + button {
+  margin-top: 1rem;
+}

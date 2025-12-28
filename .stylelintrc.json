@@ -1,0 +1,7 @@
+{
+  "ignoreFiles": [
+    "**/*.js",
+    "node_modules/**/*",
+    "tests/**/*"
+  ]
+}
